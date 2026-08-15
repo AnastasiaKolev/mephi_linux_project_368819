@@ -1,0 +1,115 @@
+    1  nmcli connection show
+    2  nmcli connection modify enp0s3 ipv4.method auto
+    3  nmcli connection modify enp0s8 ipv4.method auto
+    4  nmcli connecection up enp0s8
+    5  nmcli connection up enp0s8
+    6  ip -br addr
+    7  nmcli -f ipv4.method connection show enp0s8
+    8  lsblk
+    9  sudo fdisk /dev/sdb
+   10  lsblk
+   11  sudo mkfs.ext4 _L MEPHI_DATA /dev/sdb1
+   12  sudo mkfs.ext4 -L MEPHI_DATA /dev/sdb1
+   13  sudo blkid /dev/sdb1
+   14  sudo mkdir -p /data-mephi
+   15  sudo mount -L MEPHI_DATA /data-mephi
+   16  echo 'LABEL=MEPHI_DATA /data-mephi ext4 daefaults 0 2' | sudo tee -a /etc/fstab
+   17  df -h /data-mephi
+   18  lsblk -f
+   19  sudo nano /etc/fstab
+   20  sudo findmnt --verify
+   21  sudo umount /data-mephi
+   22  sudo mount -a
+   23  df -h /data-maphi
+   24  sudo systemctl daemon-reload
+   25  df -h /data-mephi
+   26  findmnt /data-mephi
+   27  grep MEPHI /etc/fstab
+   28  sudo useradd -m -c "MEPhI Admin" -G wheel mephi-admin
+   29  echo 'mephi-admin:P@ssw0rd2026' | sudo chpasswd
+   30  id mephi-admin
+   31  groups mephi-admin
+   32  su - mephi-admin
+   33  sudo dnf upgrade -y
+   34  sudo dnf history > /data-mephi/dnf.out
+   35  sudo sh -c 'dnf history > /data-mephi/dnf.out'
+   36  ls -l /data-mephi/dnf.out
+   37  cat /data-mephi/dnf.out
+   38  sudo dnf install -y httpd tcpdump libcap-ng-utils
+   39  rmp -q httpd tcpdump libcap-nguntils
+   40  rpm -q httpd tcpdump libcap-nguntils
+   41  rpm -q httpd tcpdump libcap-ng-utils
+   42  httpd -v
+   43  tcpdump--version
+   44  tcpdump --version
+   45  wich getcap setcap
+   46  which getcap setcap
+   47  getcap -h
+   48  sudo systemctl --now httpd
+   49  sudo systemctl enable --now httpd
+   50  sudo systemctl status httpd
+   51  systemctl is-enabled httpd
+   52  systemctl is-active httpd
+   53  sudo nano /etc/httpd/conf.d/userdir.conf
+   54  httpd -M 2>/dev/null | grep userdir
+   55  sudo apachectl configtest
+   56  grep -v '^#' /etc/httpd/conf.d/userdir.conf | grep -v '^$'
+   57  sudo apachectl configtest
+   58  sudo systemctl restart httpd
+   59  sudo setsebool -P httpd_enable_homedirs on
+   60  sudo setsebool -P httpd_read_user_content on
+   61  mkdir -p ~/public_html
+   62  echo '<h1>Personal page works</h1>' > ~/public_html/index.html
+   63  chmod 644 ~/public_html/index.html
+   64  sudo systemctl restart httpd
+   65  curl http://127.0.0.1/~a.kolevatyh/
+   66  curl http://127.0.0.1/~mephi-admin/
+   67  mkdir -p ~/public_html
+   68  sudo systemctl restart httpd
+   69  sudo journalctl -u httpd --since "5 minutes ago" | sudo tee
+   70  cat /data-mephi/httpd_logs
+   71  sudo journalctl -u httpd --since "5 minutes ago" | sudo tee
+   72  cat /data-mephi/httpd_logs
+   73  sudo journalctl -u httpd --since "5 minutes ago" | sudo tee /data-mephi/httpd_logs
+   74  sudo systemctl restart httpd
+   75  sudo journalctl -u httpd --since "5 minutes ago" | sudo tee /data-mephi/httpd_logs
+   76  cat /data-mephi/httpd_logs
+   77  ls -l /data-mephi/httpd_logs
+   78  sudo setenfoce 0
+   79  sudo setenforce 0
+   80  getenforce
+   81  sudo uderadd -m user1
+   82  sudo useradd -m user1
+   83  sudo passwd user1
+   84  sudo change -M 90 user1
+   85  sudo chage -M 90 user1
+   86  id user1
+   87  sudo chage -l user1
+   88  which tcpdump
+   89  ls -l $(which tcpdump)
+   90  getcap $(wich tcpdump)
+   91  getcap $(which tcpdump)
+   92  sudo setcap cap_new_raw, cap_net_admin+ep /usr/sbin/tcpdump
+   93  sudo setcap cap_new_raw,cap_net_admin+ep /usr/sbin/tcpdump
+   94  sudo setcap cap_net_raw,cap_net_admin+ep /usr/sbin/tcpdump
+   95  getcap /usr/sbin/tcpdump
+   96  ssudo -u user1 tcpdump-i any -c 3
+   97  sudo -u user1 tcpdump-i any -c 3
+   98  sudo -u user1 tcpdump -i any -c 3
+   99  sudo passwd -S root
+  100  sudo passwd -l root
+  101  sudo passwd -S root
+  102  sudo nano /etc/security/pwquality.conf
+  103  sudo passwd user1
+  104  sudo mkdir -p /home/user1/public_html
+  105  echo 'Hello from Student: 368819' | sudo tee /home/user1/public_html/index.html
+  106  sudo chown -R user1:user1 /home/user1/public_html
+  107  sudo chmod 755 /home/user1
+  108  sudo chmod 755 /home/user1/public_html
+  109  sudo chmod 644 /home/user1/public_html/index.html
+  110  sudo restorecon -R /home/user1/public_html
+  111  cat /home/user1/public_html/index.html
+  112  curl http://127.0.0.1/~user1/
+  113  curl http://localhost/~user1/
+  114  history >tmp/history.out
+  115  history >/tmp/history.out

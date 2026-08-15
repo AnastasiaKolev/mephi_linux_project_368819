@@ -1,0 +1,7 @@
+авг 14 15:33:03 localhost.localdomain systemd[1]: Stopping httpd.service - The Apache HTTP Server...
+авг 14 15:33:04 localhost.localdomain systemd[1]: httpd.service: Deactivated successfully.
+авг 14 15:33:04 localhost.localdomain systemd[1]: Stopped httpd.service - The Apache HTTP Server.
+авг 14 15:33:04 localhost.localdomain systemd[1]: Starting httpd.service - The Apache HTTP Server...
+авг 14 15:33:04 localhost.localdomain httpd[56939]: AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using localhost.localdomain. Set the 'ServerName' directive globally to suppress this message
+авг 14 15:33:04 localhost.localdomain systemd[1]: Started httpd.service - The Apache HTTP Server.
+авг 14 15:33:04 localhost.localdomain httpd[56939]: Server configured, listening on: port 80
